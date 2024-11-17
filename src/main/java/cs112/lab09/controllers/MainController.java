@@ -18,7 +18,7 @@ import static cs112.lab09.Constants.*;
 public class MainController {
     @FXML
     Label titleLabel;
-    
+
     @FXML
     Label subtitleLabel;
 
@@ -26,7 +26,7 @@ public class MainController {
     Label descriptionLabel;
 
     @FXML
-    ImageView imageLabel;
+    ImageView imageView;
 
     //magic window that gets called anytime window opens
     public void initialize() {
@@ -34,7 +34,9 @@ public class MainController {
         subtitleLabel.setText(MAIN_SUBTITLE);
         descriptionLabel.setText(MAIN_DESCRIPTION);
         Image image = new Image(REDSUMMER_IMAGE_PATH);
-        imageLabel.setImage(image);
+        imageView.setImage(image);
+        System.out.println(getClass().getResource(REDSUMMER_IMAGE_PATH));
+
     }
 
     public void handleStartButton() throws IOException{
@@ -49,6 +51,7 @@ public class MainController {
     public void handleQuitButton(){
         System.exit(0);
     }
+
 
 
 }
